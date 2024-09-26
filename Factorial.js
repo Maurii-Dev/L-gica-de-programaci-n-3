@@ -5,13 +5,13 @@ El factorial de 0 es 1.
 
 Definicion matematica:
 
-    (    1          , si n < 2
-n! = (  n * (n-1)!   , si n > 2
-'''
+n! = (    1          , si n < 2)
+n! = (  n * (n-1)!   , si n > 2)
+
 */
 
 // Linea para poder poner inputs.
-const prompt = require('prompt-sync')();
+//const prompt = require('prompt-sync')();
 
 /* Funcion para calcular el numero factorial de n, ingresado por el usuario.
 Condicion 1: Que n sea menor que 2, en ese caso mostrar en pantalla 1.
@@ -29,21 +29,23 @@ function factorial(n){
     }
 }
 
-while (true) {
-    // Pedimos al usuario que ingrese un número.
-    let n = prompt('Ingrese un numero entero: ');
-    
+// DOM
+// Evento al hacer clic en el botón para calcular el factorial.
+document.getElementById('calcular').addEventListener('click', function() {
+    // Obtener el valor del input.
+    let n = document.getElementById('inputN').value;
+
     // Convertimos la entrada a un número flotante.
     n = Number(n);
 
-    // Verificamos que el número sea un número entero positivo.
+    // Verificamos que el número sea entero positivo.
     if (!isNaN(n) && n >= 0 && Number.isInteger(n)) {
-        // Llamando a la función y mostrando en pantalla el resultado.
-        console.log(`El factorial de ${n} es: ${factorial(n)}`);
+        // Calculamos el factorial y mostramos el resultado en el DOM.
+        const resultado = `El factorial de ${n} es: ${factorial(n)}`;
+        document.getElementById('resultado').textContent = resultado;
     } else {
-        console.log('Por favor, ingresa un número entero positivo válido.');
+        document.getElementById('resultado').textContent = 'Por favor, ingresa un número entero positivo válido.';
     }
-}
-
+});
 
 
