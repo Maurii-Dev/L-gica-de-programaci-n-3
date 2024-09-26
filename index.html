@@ -4,17 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Factorial</title>
-    <script defer src="/Factorial.js"></script>
+    <!-- Enlace del Css -->
+    <link rel="stylesheet" href="/styles.css">
+    <!-- Enlace del Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
 </head>
-<body>
-    <h1>Calculadora de Factorial</h1>
-
-    <!-- Formulario para ingresar el número -->
-    <label for="inputN">Ingresa un número entero:</label>
-    <input type="text" id="inputN" placeholder="Ingresa un número">
-    <button id="calcular">Calcular Factorial</button>
-
-    <!-- Sección para mostrar el resultado -->
-    <p id="resultado"></p>
+<body class="container codepen-button d-flex align-items-center justify-content-center">
+    <div class="row d-flex p-3 m-3">
+        <h1>Calculadora de Factorial</h1>
+            <div class="box-input d-flex justify-content-center" id="form">
+                <!-- Formulario para ingresar el número -->
+                <div class="border p-3">
+                    <div class="row my-2">
+                        <div class="col d-flex justify-content-center">
+                            <input type="text" name="text" class="input" id="inputN" placeholder="Escriba un numero...">
+                        </div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col">
+                            <button class="codepen-button p-1"> 
+                                <a><span id="calcular">Calcular Factorial</span></a>
+                            </button>
+                            
+                        </div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col">
+                            <!-- Mostrar el resultado -->
+                            <h2 id="resultado"></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+    <!-- Enlace del Javascript -->
+    <script defer src="/Factorial.js"></script>
 </body>
 </html>

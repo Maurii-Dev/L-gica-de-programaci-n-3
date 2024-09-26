@@ -1,0 +1,130 @@
+.box-input {
+position: relative;
+}
+
+.border {
+background-image: linear-gradient(to right bottom, #e300ff, #ff00aa, #ff5956, #ffb900, #fffe00);
+box-shadow: -25px -10px 30px -5px rgba(225, 0, 255, 0.5),
+25px -10px 30px -5px rgba(255, 0, 212, 0.5),
+25px 10px 30px -5px rgba(255, 174, 0, 0.5),
+-25px 10px 30px -5px rgba(255, 230, 0, 0.5);
+padding: 4px;
+}
+
+.input {
+background-color: #212121;
+max-width: 250px;
+height: 40px;
+padding: 0 19px 0 10px;
+font-size: 1.1em;
+position: relative;
+border: none;
+color: white;
+outline: 0;
+overflow: hidden;
+}
+
+.box-input::after,
+.box-input::before {
+content: "";
+width: 130px;
+height: 30px;
+position: absolute;
+z-index: -1;
+}
+
+.box-input::after {
+bottom: 0;
+right: 0;
+}
+
+.box-input::before {
+top: 0;
+left: 0;
+}
+
+.input::placeholder {
+transition: all 0.5s ease-in, transform 0.2s ease-in 0.6s;
+}
+
+.input:focus::placeholder {
+padding-left: 165px;
+transform: translateY(-50px);
+}
+
+body {
+    display: flex; /* Activa Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    min-height: 100vh; /* Hace que el body tenga al menos el tamaño de la pantalla */
+    margin: 0; /* Elimina márgenes */
+    place-items: center;
+  }
+
+.box-input { /* Limita el ancho del formulario */
+    width: 100%;      /* Asegura que ocupe todo el espacio horizontal posible */
+  }
+
+/* From Uiverse.io by SelfMadeSystem */ 
+/* Yoinked from CodePen, but improved the animation
+so that it is smooth among other more minor things */
+
+.codepen-button {
+    display: block;
+    cursor: pointer;
+    color: white;
+    margin: 0 auto;
+    position: relative;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 3px;
+    isolation: isolate;
+  }
+  
+  .codepen-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400%;
+    height: 100%;
+    background: linear-gradient(to right,#4fcf70,#fad648,#a767e5,#12bcfe,#44ce7b);
+    background-size: 25% 100%;
+    animation: an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop .75s linear infinite;
+    animation-play-state:running;
+    translate: -5% 0%;
+    transition: translate 0.25s ease-out;
+  }
+  
+  .codepen-button:hover::before {
+    animation-play-state: running;
+    transition-duration: 0.75s;
+    translate: 0% 0%;
+  }
+  
+  @keyframes an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop {
+    to {
+      transform: translateX(-25%);
+    }
+  }
+  
+  .codepen-button span {
+    position: relative;
+    display: block;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    background: #000;
+    border-radius: 3px;
+    height: 100%;
+  }
+
+#inputN {
+    border-radius: 25px;
+    text-align: center;
+}
+
+#resultado {
+    color:#28f3fa;
+}
